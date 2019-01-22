@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="css/myCSS.css">
+</head>
+<body style="background-color:lightgrey">
+
+	<div id="header" class="header">
+		<div>
+			<ul>
+				<li><a wicket:id="page1" href="Page1">Page1</a></li>
+				<li><a wicket:id="page2" href="Page2">Page2</a></li>
+			</ul>
+		</div>
+		<div wicket:id="feedback"></div>
+	</div>
+	
+	<div id="body" class="body">
+		<div wicket:id="configurationTabs" class="tabpanel"></div>
+		<div id="content" class="content">
+			<wicket:child />
+		</div>	
+	</div>
+	
+	<div id="footer" class="footer">
+		<span wicket:id="footer"></span>
+	</div>
+
+</body>
+</html>

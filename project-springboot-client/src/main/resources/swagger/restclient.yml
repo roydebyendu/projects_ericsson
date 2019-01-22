@@ -1,0 +1,127 @@
+swagger: '2.0' #version of Swagger
+info: # High Level information of API
+  description: Sample Swagger Demo #Give the description of API
+  version: 1.0.0 #API version
+  title: Swagger Employee Demo # API title
+  license: #Swagger license info
+    name: Apache 2.0
+#    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:8080 # Host Name
+basePath: /project-springboot #Basepath when there are multiple versions of API running
+tags: # Tag information for each API operation. Multiple tags for multiple API operation
+  - name: employee #Tag name
+    description: Everything about your Employee #Tag description of API operation
+schemes:
+ - http #security schemes
+paths:
+  '/showEmployeeForSaggarClient/{empName}/': #Request Mapping path of REST API
+    get: #Request method type, GET,POST etc.
+      tags: # Refer to created tag above
+        - employee
+      summary: Find employee by ID #Summary
+#     description: Returns a single Employee #Description of API operation
+      operationId: getEmployeeList #Method name
+      consumes:
+        - application/json
+      produces:
+        - application/json #Response content type
+      parameters:
+        - name: empName #Input parameter
+          in: path #path variable
+          description: ID of Employee to return #description of parameter
+          required: true #Is mandatory
+          type: string #data type
+#         format: int64 #data type format, signed 64 bits
+      responses: # API response
+        '200': #Successful status code
+          description: successful operation #Successful status description
+          schema:
+            $ref: '#/definitions/Employees' #Response object details
+        '400': #Unsuccessful response code
+          description: Invalid Employee ID supplied #Unsuccessful response description
+        '404': #Unsuccessful response code
+          description: Employee not found #Unsuccessful response description
+    
+  '/showEmployee/': #Request Mapping path of REST API
+    get: #Request method type, GET,POST etc.
+      tags: # Refer to created tag above
+        - employee
+      summary: Find employee by ID #Summary
+#     description: Returns a single Employee #Description of API operation
+      operationId: getAllEmployeeList #Method name
+      consumes:
+        - application/json
+      produces:
+        - application/json #Response content type
+      parameters:
+        #- name: empName #Input parameter
+        #  in: path #path variable
+          description: ID of Employee to return #description of parameter
+          required: false #Is mandatory
+        #  type: string #data type
+#         format: int64 #data type format, signed 64 bits
+      responses: # API response
+        '200': #Successful status code
+          description: successful operation #Successful status description
+          schema:
+            $ref: '#/definitions/Employees' #Response object details
+        '400': #Unsuccessful response code
+          description: Invalid Employee ID supplied #Unsuccessful response description
+        '404': #Unsuccessful response code
+          description: Employee not found #Unsuccessful response description  
+    
+  '/insertEmployeeForSaggarClient/': #Request Mapping path of REST API
+    post: #Request method type, GET,POST etc.
+      tags: # Refer to created tag above
+        - employee
+      summary: insert employee #Summary
+      description: Returns a single Employee #Description of API operation
+      operationId: insertEmployee #Method name
+      consumes:
+        - application/json
+      produces:
+        - application/json #Response content type
+      parameters:
+        - name: employee #Input parameter
+          in: body #path variable
+          description: employee details #description of parameter
+          required: true #Is mandatory
+          type: object #data type
+#         format: int64 #data type format, signed 64 bits
+          schema:
+            $ref: '#/definitions/Employee'  
+      responses: # API response
+        '200': #Successful status code
+          description: successful operation #Successful status description
+          schema:
+            $ref: '#/definitions/Employees' #Response object details
+        '400': #Unsuccessful response code
+          description: Invalid Employee ID supplied #Unsuccessful response description
+        '404': #Unsuccessful response code
+          description: Employee not found #Unsuccessful response description          
+          
+          
+definitions: # Object definition
+  Employees:   #List of Employee
+    type: object  
+    properties: #Object properties
+      employeeList: # List containing all employees  
+        type: array
+        items : 
+          $ref: '#/definitions/Employee'
+          
+  Employee: #Employee Object
+    type: object
+    properties: #Object properties
+      eid: #Id attribute
+        type: string
+      ename: #name attribute
+        type: string
+        description: Employee Name #data type description
+      salary: #salary attribute
+        type: string #Data type
+        description: Employee salary #Data type description
+      deg: #deg attribute
+        type: string #Data type
+        description: Employee designation #Data type description  
+    

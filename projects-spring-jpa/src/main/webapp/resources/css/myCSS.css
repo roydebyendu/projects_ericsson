@@ -1,0 +1,110 @@
+.header{
+	background-color:white;
+	border: 1px solid orange;
+	height: 15%;
+	width: 90%;
+	padding: 25px;
+	margin: 30px;
+}
+
+.body{
+	background-color:white;
+	border: 1px solid orange;
+	height: 25%;
+	width: 90%;
+	padding: 25px;
+	margin: 30px;
+}
+
+.content{
+	background-color:white;
+	border: 1px solid orange;
+	height: 50%;
+	width: 90%;
+	padding: 25px;
+	margin: 30px;
+}
+
+.footer{
+	background-color:white;
+	border: 1px solid orange;
+	height: 10%;
+	width: 90%;
+	padding: 25px;
+	margin: 30px;
+}
+
+.a{
+    background-color: lightgrey;
+    width: 500px;
+    padding: 25px;
+    border: 25px solid navy;
+    margin: 25px;
+}
+
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  //padding: 5 px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+/* TAB PANEL STYLES */
+
+div.tabcontent {
+	border: 1px solid orange;
+	height: 100px;
+}
+
+div.tabpanel div.tab-row{
+  float:left;
+  width:100%;
+  background:#DAE0D2;
+  line-height:normal;
+}
+
+div.tabpanel div.tab-row ul {
+  margin:0;
+  /*top right bottom left*/
+  padding: 10px 0px 2px 10px;
+  list-style:none;
+}
+
+div.tabpanel div.tab-row li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  list-style-type: none;
+}
+
+div.tabpanel div.tab-row a:link,
+ div.tabpanel div.tab-row a:visited {
+  float: none;
+  background: #f3f3f3;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: bold;
+  padding: 2px 10px 2px 10px;
+  margin-right: 4px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #666;
+}
+
+div.tabpanel div.tab-row li.selected a:link,
+ div.tabpanel div.tab-row a:visited.active {
+  border-bottom: 1px solid #fff;
+  background: #fff;
+  color: #000;
+}
+
+div.tabpanel div.tab-row a:hover {
+  background: #fff;
+}
+

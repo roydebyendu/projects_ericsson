@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html>
+<head>
+
+<link rel="stylesheet" href="css/myCSS.css">
+</head>
+
+<wicket:panel>
+	<div>
+			<table cellspacing="0">
+				<tbody>
+					<tr>
+    					<th>Employee Id</th>
+    					<th>Employee Name</th>
+    					<th>Employee Salary</th>
+    					<th>Employee Designation</th>
+    					<th>Select</th>
+    				</tr>
+    				<tr wicket:id="simple">
+    					<!--td><input wicket:id="employeeId" type="text" size="20" /></td>
+    					<td><input wicket:id="employeeName" type="text" size="20" /></td>
+    					<td><input wicket:id="employeeSalary" type="text" size="20" /></td>
+    					<td><input wicket:id="employeeDesignation" type="text" size="20" /></td-->
+    					<td><span wicket:id="employeeId"></span></td>
+    					<td><span wicket:id="employeeName"></span></td>
+    					<td><span wicket:id="employeeSalary"></span></td>
+    					<td><span wicket:id="employeeDesignation"></span></td>
+    					<td><a wicket:id="show" href="#">Show</a></td>
+    				</tr>
+					
+				</tbody>
+			</table>
+
+			<div wicket:id="navigator"></div>
+			<div><span wicket:id="popupWindow"></span></div>
+		</div>
+</wicket:panel>
+</html>
